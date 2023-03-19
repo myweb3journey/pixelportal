@@ -43,8 +43,8 @@ root.render(
       <RainbowKitProvider 
         chains={chains} coolMode
         theme={lightTheme({
-          accentColor: '#000000',
-          accentColorForeground: 'white',
+          accentColor: '#FFFFFF',
+          accentColorForeground: 'black',
           borderRadius: 'none',
           fontStack: 'system',
           overlayBlur: 'small',
