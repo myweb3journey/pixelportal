@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Deployed Smart Contracts
+Mainnet
+CreatePool.sol - Creates Pooled NFTs
+0x17ba9c4d21d9215bec87966b83b46d6ee9eb8c87
+
+Goerli
+CreatePool.sol - Creates Pooled NFTs
+
 ## Available Scripts
 
 In the project directory, you can run:
