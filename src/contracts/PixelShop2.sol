@@ -104,6 +104,7 @@ contract PixelShop2 {
         return propertiesLength;
     }
 
+
     function getAllowance(address spender, uint _index)
     public
     view
@@ -141,6 +142,14 @@ contract PixelShop2 {
     view
     returns(uint){
         return properties[_index].stockData.price;
+
+    }
+
+    function getDiscountedPrice(uint _index)
+        public
+        view
+        returns(uint){
+            return properties[_index].stockData.price/2;
 
     }
 
@@ -238,9 +247,9 @@ contract PixelShop2 {
         );
 
         //transfer tokens from buyer to seller
-        uint256 price = properties[_index].stockData.price;
+        uint256 price = this.getPropertyPrice(_index);
         if(_buyerCurrencyTokenAddress==properties[_index].stockData.currencyTokenAddress){
-            price = properties[_index].stockData.price/2;
+            price = getDiscountedPrice(_index);
         }
         require(
           IERC20Token(_buyerCurrencyTokenAddress).transferFrom(

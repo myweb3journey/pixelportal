@@ -19,7 +19,7 @@ let ETH_MAINNET = 1;
 let GOERLI = 5;
 let defaultAccount;
 let kit
-const ShopContractAddress = "0xe9d50eb4825A6D7B917a4346100E733c63A1Bc51"
+const ShopContractAddress = "0x918bCD7E101c08844914E15650a667934c6CBC11"
 let contract
 let erc20Contract
 let properties = []
@@ -156,7 +156,7 @@ function renderProperties() {
           ${_property.description}             
         </p>
         <p class="card-text mb-4" style="min-height: 82px">
-          ${_property.currencyAddress}             
+          Creator Currency ${_property.currencyAddress}             
         </p>
         <p class="card-text mt-4">
           <i class="bi bi-tag"></i>
@@ -168,101 +168,19 @@ function renderProperties() {
           <a class="btn btn-lg btn-outline-dark buyBtn fs-6 p-3" style="${_property.status!=0?'display:none':'display:block'}" id=${
             _property.index
           }>
-            Buy for ${parseFloat(web3.utils.fromWei(_property.price.toString(), 'ether')/_property.numShares).toFixed(2)} cUSD per share
+            Buy for ${parseFloat(web3.utils.fromWei(_property.price.toString(), 'ether')/_property.numShares).toFixed(2)}
           </a>
 
           <!-- only show update price and cancel buttons if current viewer is the owner and there are no properties sold-->
-          <a class="btn btn-lg btn-outline-dark updatePriceBtn fs-6 p-3" style="${_property.status!=0||viewerIsOwner!=true||_property.sold>0?'display:none':'display:block'}" id=${
-            _property.index
-          }
-              data-bs-toggle="modal"
-              data-bs-target="#updatePriceModal-${
-                _property.index}">
-            Update Property
-          </a>
-          
-          <a class="btn btn-lg btn-outline-dark houseTokenBtn fs-6 p-3" href= "${celoExplorer}token/${_property.houseTokenAddress}/token-transfers" target="_blank" id=${
-            _property.index} style="${_property.status!=0?'display:none':'display:block'}"
-          >
-            House Token
-          </a>
+         
         </div>
       </div>
     </div>
     
     
-    <!--Modal-->
-        <div
-        class="modal fade"
-        id="updatePriceModal-${
-          _property.index}"
-        tabindex="-1"
-        aria-labelledby="updatePriceModalLabel"
-        aria-hidden="true"
-        >
-        <div class="modal-dialog">
-        <div class="modal-content">
-
-            <div class="modal-header">
-            <h5 class="modal-title" id="updatePriceModalLabel">New Property</h5>
-            <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-            ></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                  <div class="form-row">
-                    <div class="col">
-                      <input
-                        type="number"
-                        id="updatePrice-${
-                          _property.index}"
-                        class="form-control mb-2"
-                        placeholder="Enter updated property price"
-                      />
-                    </div>
-                  </div>
-                </form>
-                <button
-                  type="button"
-                  class="btn btn-dark"
-                  data-bs-dismiss="modal"
-                  id="updatePriceModalBtn-${
-                    _property.index}"
-                >
-                  Update Property Price
-                </button>
-            
-              </div>
-
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-light border"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-
-                <a class="btn btn-lg btn-outline-dark cancelSaleBtn fs-6 p-3" data-bs-dismiss="modal"  id=${
-                  _property.index
-                }>
-                  Cancel Sale
-                </a>
-                
-              </div>
-            </div>
-            
-          </div>
-
-          
-
-          
-        </div>
-        <!--/Modal-->`
+  
+        
+        `
     
 }
 
@@ -293,6 +211,35 @@ function renderProperties() {
   function notificationOff() {
     document.querySelector(".alert").style.display = "none"
   }
+
+  /* Add Property button */
+  async function newPropertyBtn(){
+    console.log("newPropertyBtn")
+    const params = [
+      [
+        document.getElementById("newPropertyName").value,
+        document.getElementById("newImgUrl").value,
+        document.getElementById("newPropertyDescription").value
+      ],
+      [
+        web3.utils.toWei(document.getElementById("newPrice").value),
+        0,
+        document.getElementById("numShares").value,
+        ""
+      ]
+    ]
+    console.log(`⌛ Adding "${params[0]}"...`)
+    try {
+        const result = await contract.methods
+          .writeProperty(...params)
+          .send({ from: defaultAccount })
+          console.log(result)
+      } catch (error) {
+        console.error(`⚠️ ${error}.`)
+      }
+      console.log(`🎉 You successfully added "${params[0]}".`)
+      await getProperties()
+}
 
 
 export default Shop
