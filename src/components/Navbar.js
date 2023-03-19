@@ -55,28 +55,28 @@ const Navbar = () => {
     }
   
     return (
-        <div className="p-8">
-          <div className="bg-gray-100 shadow-xl w-full sticky top-0 z-50 dark:border-green-500 border border-black">
-            <nav className="p-5">
+        <div className="">
+          <div className="bg-gray-50 shadow-xl w-full sticky dark:border-green-500">
+            <nav className="p-3">
                 {/* For large and Medium-sized Screens */}
                 <div className="flex justify-between">
-                    <div className=" flex space-x-3 items-center">
-                        <img onClick={() => navigate("/")} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZ7cCp08TLsmI_-NgTq3m6DVwuJtMdjooFMmMx87enIkBgqpM82b6tPID3JUI6MTpmfg&usqp=CAU" className="h-12 mr-3 sm:h-12 border-black border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img>
-                        <h1 className="font-bold xl:text-2xl lg:text-xl md:text-md sm:text-sm leading-6 text-black">{navbarData.title}</h1>
+                    <div className="flex space-x-3 items-center">
+                        <img onClick={() => navigate("/")} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZ7cCp08TLsmI_-NgTq3m6DVwuJtMdjooFMmMx87enIkBgqpM82b6tPID3JUI6MTpmfg&usqp=CAU" className="h-12 border-black border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img>
+                        <h1 className="font-bold text-lg leading-6 text-black">{navbarData.title}</h1>
                     </div>
                     <div className="hidden sm:flex flex flex-row space-x-4 items-center">
                         {/* Btn: Home */}
-                        <button onClick={() => navigate("/")} className="flex p-2 shadow-lg font-semibold text-xs text-black bg-white border border-black focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/")} className="flex p-2 shadow-lg font-semibold text-xs text-black bg-gray-100 border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
                             {navbarData.home_btn_txt}
                         </button>
 
                         {/* Btn: Dashboard */}
-                        <button onClick={() => navigate("/dashboard")} className="flex p-2 shadow-lg font-semibold text-xs text-black bg-white border border-black focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/dashboard")} className="flex p-2 shadow-lg font-semibold text-xs text-black  bg-gray-100 border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
                             {navbarData.dashboard_btn_txt}
                         </button>
 
                         {/* Btn: Marketplace */}
-                        <button onClick={() => navigate("/marketplace")} className="flex p-2 shadow-lg font-semibold text-xs text-black bg-white border border-black focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/marketplace")} className="flex p-2 shadow-lg font-semibold text-xs text-black  bg-gray-100 border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
                                 {navbarData.marketplace_btn_txt}
                         </button>
 

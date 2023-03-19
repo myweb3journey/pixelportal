@@ -6,11 +6,11 @@ import { Routes, Route } from "react-router-dom"
 
 // components
 import Navbar from './components/Navbar';
-import Marketplace from './components/Marketplace';
 
 // pages
 import Landing from "./pages/Landing"
 import Dashboard from './pages/Dashboard';
+import Marketplace from './pages/Marketplace';
 
 function App() {
   return (
