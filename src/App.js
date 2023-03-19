@@ -6,13 +6,13 @@ import { Routes, Route } from "react-router-dom"
 
 // components
 import Navbar from './components/Navbar';
-import Marketplace from './components/Marketplace';
 import CreatorPool from './components/CreatorPool';
 import Shop from './components/Shop'
 
 // pages
 import Landing from "./pages/Landing"
 import Dashboard from './pages/Dashboard';
+import Marketplace from './pages/Marketplace';
 
 function App() {
   return (

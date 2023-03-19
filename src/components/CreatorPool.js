@@ -2,6 +2,7 @@ import React from 'react'
 import Web3 from 'web3'
 import IERC721ABI from '../contracts/IERC721.abi.json'
 import IERC721PoolABI from '../contracts/IERC721Pool.abi.json'
+import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 // const React = require("react");
 // const Web3 = require('web3');
@@ -60,12 +61,10 @@ const connectMetamaskWallet = async function () {
     let erc721Pool = "0xBBdEA5748561eEe4330f744456b658e08f495Ccb";
     let erc721Contract = new web3.eth.Contract(IERC721ABI, erc721Address);
     console.log(erc721Contract);
+    console.log(`is it connected ${defaultAccount}`);
   
-    const params = [
-      erc721Pool,
-      tokenID
-    ];
-    console.log(`⌛ Approving "${params[0]}" for ${params[1]}`)
+    
+    console.log(`⌛ Approving "${erc721Pool}" for ${tokenID}`)
     try {
         const result = await erc721Contract.methods
           .approve(
@@ -75,8 +74,9 @@ const connectMetamaskWallet = async function () {
           console.log(result)
       } catch (error) {
         console.log(`⚠️ ${error}.`)
+        console.log(error)
       }
-      console.log(`🎉 You successfully added "${params[0]}".`)
+      console.log(`🎉 You successfully added "${erc721Pool}".`)
     }
   
 
@@ -109,8 +109,44 @@ async function depositBtn(){
   // })
 }
 
+async function withdrawBtn(){
+  console.log("withdraw from pool")
+  // get NFT address
+  // get token ID for NFT
+  // get ERC721Pool Address
+  let tokenID = 1;
+  let erc721Pool = "0xBBdEA5748561eEe4330f744456b658e08f495Ccb";
+  let erc721PoolContract = new web3.eth.Contract(IERC721PoolABI, erc721Pool);
+  console.log(erc721PoolContract);
+
+  const params = [
+    tokenID
+  ];
+  console.log(`⌛ Withdrawing "${params[0]}"`)
+  try {
+      const result = await erc721PoolContract.methods
+        .withdraw(
+          [tokenID]
+          )
+        .send({ from: defaultAccount })
+        console.log(result)
+    } catch (error) {
+      console.log(`⚠️ ${error}.`)
+    }
+    console.log(`🎉 You successfully withdrawn "${params[0]}".`)
+  // })
+}
+
 
 const CreatorPool = () => {
+  const { address, isConnected } = useAccount()
+  
+ 
+  if (isConnected){
+    defaultAccount = address
+    console.log(`connected to ${defaultAccount}`)
+  }
+
   return (
     <div>
       <p>Creator Pool</p>
@@ -119,13 +155,20 @@ const CreatorPool = () => {
         id="approveCreatorPoolBtn"
         onClick={async () => {await approveBtn();} }
       >Approve Pool</button>
-   
+   <br/>
     <button
       type="button"
       id="depositToCreatorPoolBtn"
       onClick={async () => {await depositBtn();} }
 
     >Deposit Pool</button>
+    <br/>
+    <button
+      type="button"
+      id="withdrawFromCreatorPoolBtn"
+      onClick={async () => {await withdrawBtn();} }
+
+    >Withdraw from Pool</button>
     </div>
   )
 }
