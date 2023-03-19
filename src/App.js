@@ -10,8 +10,8 @@ import Navbar from './components/Navbar';
 // pages
 import Landing from "./pages/Landing"
 import Dashboard from './pages/Dashboard';
-import Marketplace from './pages/Marketplace';
 import CreateCollectible from './pages/CreateCollectible';
+import CreateNFT from './pages/CreateNFT';
 
 function App() {
   return (
@@ -25,11 +25,11 @@ function App() {
           {/* Dashboard */}
           <Route path="/dashboard" exact element={<Dashboard/>}/>
 
-          {/* Marketplace */}
-          <Route path="/marketplace" exact element={<Marketplace/>}/>
-
           {/* Create Collectible */}
           <Route path="/createcollectible" exact element={<CreateCollectible/>}/>
+
+          {/* Create NFT */}
+          <Route path="/createNFT" exact element={<CreateNFT/>}/>
 
       </Routes>
     </div>

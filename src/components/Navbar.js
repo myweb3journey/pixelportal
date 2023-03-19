@@ -78,10 +78,10 @@ const Navbar = () => {
                             {navbarData.dashboard_btn_txt}
                         </button>
 
-                        {/* Btn: Marketplace */}
+                        {/* Btn: Marketplace
                         <button onClick={() => navigate("/marketplace")} className="flex p-2 shadow-lg font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
                                 {navbarData.marketplace_btn_txt}
-                        </button>
+                        </button> */}
 
                         {/* Btn: Connect Wallet */}
                         <ConnectButton className="flex justify-center items-center text-xs"/>
@@ -118,9 +118,9 @@ const Navbar = () => {
                         </button>
 
                         {/* Marketplace */}
-                        <button onClick={() => navigate("/marketplace")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none duration-150 justify-center items-center">
+                        {/* <button onClick={() => navigate("/marketplace")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none duration-150 justify-center items-center">
                                 {navbarData.marketplace_btn_txt}
-                        </button>
+                        </button> */}
 
                         {/* Btn: Connect Wallet */}
                         {/* <ConnectButton className="flex justify-center items-center text-xs"/> */}

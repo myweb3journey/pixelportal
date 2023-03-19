@@ -50,7 +50,7 @@ const Dashboard = () => {
                   </div>
               </div>
               <div className="px-6 pt-2 pb-2 flex text-center">
-                  <button onClick={() => {navigate("/createcollectible")}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Create NFT</button>
+                  <button onClick={() => {navigate("/createNFT")}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Create NFT</button>
               </div>
           </div>
 
