@@ -1,7 +1,11 @@
 import React from 'react'
 import hero_img from "../assets/hero_img.png"
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="bg-black w-full h-screen">
       <div className="justify-center items-center">
@@ -20,7 +24,7 @@ const Dashboard = () => {
                   </div>
               </div>
               <div className="px-6 pt-2 pb-2 flex text-center">
-                  <button onClick={() => {}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Start Creator Pool</button>
+                  <button onClick={() => {navigate("/")}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Start Creator Pool</button>
               </div>
           </div>
 
@@ -33,7 +37,7 @@ const Dashboard = () => {
                   </div>
               </div>
               <div className="px-6 pt-2 pb-2 flex text-center">
-                  <button onClick={() => {}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Create Collection</button>
+                  <button onClick={() => {navigate("/createcollectible")}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Create Collection</button>
               </div>
           </div>
 
@@ -46,7 +50,7 @@ const Dashboard = () => {
                   </div>
               </div>
               <div className="px-6 pt-2 pb-2 flex text-center">
-                  <button onClick={() => {}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Create NFT</button>
+                  <button onClick={() => {navigate("/createcollectible")}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Create NFT</button>
               </div>
           </div>
 
@@ -60,7 +64,7 @@ const Dashboard = () => {
 
               </div>
               <div className="px-6 pt-2 pb-2 flex text-center">
-                  <button onClick={() => {}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Port Over</button>
+                  <button onClick={() => {navigate("/")}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Port Over</button>
               </div>
           </div>
 
@@ -75,7 +79,7 @@ const Dashboard = () => {
               
               </div>
               <div className="px-6 pt-2 pb-2 flex text-center">
-                  <button onClick={() => {}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">List Items</button>
+                  <button onClick={() => {navigate("/createcollectible")}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">List Items</button>
               </div>
           </div>
 
@@ -89,7 +93,7 @@ const Dashboard = () => {
             
               </div>
               <div className="px-6 pt-2 pb-2 flex text-center">
-                  <button onClick={() => {}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Create Lending Pool</button>
+                  <button onClick={() => {navigate("/")}} className="flex justify-center align-items-center bg-black px-4 py-2 text-sm font-semibold text-white mb-2 shadow-lg">Create Lending Pool</button>
               </div>
           </div>
         </div>

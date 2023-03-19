@@ -11,6 +11,7 @@ import Navbar from './components/Navbar';
 import Landing from "./pages/Landing"
 import Dashboard from './pages/Dashboard';
 import Marketplace from './pages/Marketplace';
+import CreateCollectible from './pages/CreateCollectible';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
 
           {/* Marketplace */}
           <Route path="/marketplace" exact element={<Marketplace/>}/>
+
+          {/* Create Collectible */}
+          <Route path="/createcollectible" exact element={<CreateCollectible/>}/>
 
       </Routes>
     </div>
