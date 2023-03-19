@@ -11,6 +11,9 @@ import { navbarData } from "../utils/utils";
 // framer
 import { motion } from "framer-motion"
 
+// connect button
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
 const Navbar = () => {
 
     // Collapsed menu hook:
@@ -80,34 +83,11 @@ const Navbar = () => {
                                 {navbarData.marketplace_btn_txt}
                         </button>
 
-                        {/* Theme switch */}
-                        <div onClick={toggleTheme} className={`flex h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>
-                            <motion.div 
-                                className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-black/90"
-                                layout
-                                transition={spring}
-                            >
-                                <motion.div whileTap={{rotate: 360}}>
-                                {isOn ? (<RiMoonClearFill className="h-4 w-4 text-slate-200" />) : (<RiSunFill className="h-4 w-4 text-yellow-300" />)}
-                            </motion.div>
-                            </motion.div>    
-                        </div>
+                        {/* Btn: Connect Wallet */}
+                        <ConnectButton className="flex justify-center items-center text-xs"/>
+
                     </div>
                     <div className="flex flex-row justify-center items-center sm:hidden space-x-3">
-                        {/* Theme switch */}
-                        <div onClick= {toggleTheme}
-                            className={`flex h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>
-                            <motion.div 
-                                className="flex h-[25px] w-[25px] items-center justify-center rounded-full bg-black/90"
-                                layout
-                                transition={spring}
-                            >
-                                <motion.div whileTap={{rotate: 360}}>
-                                {isOn ? (<RiMoonClearFill className="h-4 w-4 text-slate-200" />) : (<RiSunFill className="h-4 w-4 text-yellow-300" />)}
-                            </motion.div>
-                            </motion.div>    
-                        </div>
-                    
                         {/* Burger Icon */}
                         <div id="bgIcon" onClick={() => setshow(!show)} className={`flex flex-row focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 justify-center items-center sm:hidden cursor-pointer`}>
                             <div className="bg-white p-1 border border-white shadow-lg items-center">
@@ -141,6 +121,9 @@ const Navbar = () => {
                         <button onClick={() => navigate("/marketplace")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none duration-150 justify-center items-center">
                                 {navbarData.marketplace_btn_txt}
                         </button>
+
+                        {/* Btn: Connect Wallet */}
+                        {/* <ConnectButton className="flex justify-center items-center text-xs"/> */}
                     </div>
                 </div>
             </nav>
