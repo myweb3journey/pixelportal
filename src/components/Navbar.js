@@ -59,29 +59,29 @@ const Navbar = () => {
   
     return (
         <div className="">
-          <div className="bg-gray-50 shadow-xl w-full sticky dark:border-green-500">
-            <nav className="p-3">
+          <div className="bg-black shadow-xl w-full sticky dark:border-green-500">
+            <nav className="p-10">
                 {/* For large and Medium-sized Screens */}
                 <div className="flex justify-between">
                     <div className="flex space-x-3 items-center">
-                        <img onClick={() => navigate("/")} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZ7cCp08TLsmI_-NgTq3m6DVwuJtMdjooFMmMx87enIkBgqpM82b6tPID3JUI6MTpmfg&usqp=CAU" className="h-12 border-black border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img>
-                        <h1 className="font-bold text-lg leading-6 text-black">{navbarData.title}</h1>
+                        {/* <img onClick={() => navigate("/")} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZ7cCp08TLsmI_-NgTq3m6DVwuJtMdjooFMmMx87enIkBgqpM82b6tPID3JUI6MTpmfg&usqp=CAU" className="h-12 border-black border-2 shadow-lg hover:cursor-pointer" alt="Filecoin Green Logo"></img> */}
+                        <h1 className="font-bold text-xl leading-6 text-white">{navbarData.title}</h1>
                     </div>
                     <div className="hidden sm:flex flex flex-row space-x-4 items-center">
                         {/* Btn: Home */}
-                        <button onClick={() => navigate("/")} className="flex p-2 shadow-lg font-semibold text-xs text-black bg-gray-100 border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/")} className="flex p-2 shadow-lg font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
                             {navbarData.home_btn_txt}
                         </button>
 
                         {/* Btn: Dashboard */}
-                        <button onClick={() => navigate("/dashboard")} className="flex p-2 shadow-lg font-semibold text-xs text-black  bg-gray-100 border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
+                        <button onClick={() => navigate("/dashboard")} className="flex p-2 shadow-lg font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
                             {navbarData.dashboard_btn_txt}
                         </button>
 
-                        {/* Btn: Marketplace */}
-                        <button onClick={() => navigate("/marketplace")} className="flex p-2 shadow-lg font-semibold text-xs text-black  bg-gray-100 border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
+                        {/* Btn: Marketplace
+                        <button onClick={() => navigate("/marketplace")} className="flex p-2 shadow-lg font-semibold text-xs text-white bg-black border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
                                 {navbarData.marketplace_btn_txt}
-                        </button>
+                        </button> */}
 
                         {/* Btn: CreatorPool */}
                         <button onClick={() => navigate("/creatorpool")} className="flex p-2 shadow-lg font-semibold text-xs text-black  bg-gray-100 border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
@@ -123,9 +123,9 @@ const Navbar = () => {
                         </button>
 
                         {/* Marketplace */}
-                        <button onClick={() => navigate("/marketplace")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none duration-150 justify-center items-center">
+                        {/* <button onClick={() => navigate("/marketplace")} className="flex space-x-2 w-full h-10 font-semibold text-sm leading-3 text-white bg-black border border-white focus:outline-none duration-150 justify-center items-center">
                                 {navbarData.marketplace_btn_txt}
-                        </button>
+                        </button> */}
 
                         {/* Btn: Connect Wallet */}
                         {/* <ConnectButton className="flex justify-center items-center text-xs"/> */}
