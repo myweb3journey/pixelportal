@@ -80,6 +80,11 @@ const Navbar = () => {
                                 {navbarData.marketplace_btn_txt}
                         </button>
 
+                        {/* Btn: CreatorPool */}
+                        <button onClick={() => navigate("/creatorpool")} className="flex p-2 shadow-lg font-semibold text-xs text-black bg-white border border-black focus:outline-none focus:bg-white focus:text-black duration-150 justify-center items-center">
+                                {navbarData.creatorpool_btn_txt}
+                        </button>
+
                         {/* Theme switch */}
                         <div onClick={toggleTheme} className={`flex h-[30px] w-[60px] rounded-[50px] bg-zinc-100 p-[2.5px] shadow-inner hover:cursor-pointer dark:bg-zinc-700 ${ isOn && 'place-content-end'}`}>
                             <motion.div 

@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom"
 // components
 import Navbar from './components/Navbar';
 import Marketplace from './components/Marketplace';
+import CreatorPool from './components/CreatorPool';
 
 // pages
 import Landing from "./pages/Landing"
@@ -26,6 +27,9 @@ function App() {
 
           {/* Marketplace */}
           <Route path="/marketplace" exact element={<Marketplace/>}/>
+
+          {/* DepositToCreatorPool */}
+          <Route path="/creatorpool" exact element={<CreatorPool/>}/>
 
       </Routes>
     </div>
