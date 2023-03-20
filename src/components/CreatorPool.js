@@ -2,6 +2,7 @@ import React from 'react'
 import Web3 from 'web3'
 import IERC721ABI from '../contracts/IERC721.abi.json'
 import IERC721PoolABI from '../contracts/IERC721Pool.abi.json'
+import CreatorPoolABI from '../contracts/CreatorPool.abi.json'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
 
 // const React = require("react");
@@ -56,9 +57,9 @@ const connectMetamaskWallet = async function () {
     // get NFT address
     // get token ID for NFT
     // get ERC721Pool Address
-    let erc721Address = "0x0F134c6B15265583BC8cB9fAEBCA30D5127C648d";
+    let erc721Address = "0x0F134c6B15265583BC8cB9fAEBCA30D5127C648d"; //goerli
     let tokenID = 1;
-    let erc721Pool = "0xBBdEA5748561eEe4330f744456b658e08f495Ccb";
+    let erc721Pool = "0xBBdEA5748561eEe4330f744456b658e08f495Ccb"; //goerli
     let erc721Contract = new web3.eth.Contract(IERC721ABI, erc721Address);
     console.log(erc721Contract);
     console.log(`is it connected ${defaultAccount}`);
@@ -79,7 +80,31 @@ const connectMetamaskWallet = async function () {
       console.log(`🎉 You successfully added "${erc721Pool}".`)
     }
   
+  async function createPool(){
+    let erc721Address = document.getElementById(`createPool`).value
+    console.log(erc721Address);
+      console.log("create pool")
+      
+      console.log(erc721Address);
+    
+      console.log(`⌛ Creating Pool "${erc721Address}"`)
 
+      let creatorPoolAddress = "0xcbb9ddd989abe357a9a19433bbe68fa011e538fb"; //goerli
+      let creatorPoolContract = new web3.eth.Contract(creatorPoolAddress, CreatorPoolABI);
+      console.log(creatorPoolContract);
+      try {
+          const result = await creatorPoolContract.methods
+            .createPixelPool(
+              erc721Address
+              )
+            .send({ from: defaultAccount })
+            console.log(result)
+        } catch (error) {
+          console.log(`⚠️ ${error}.`)
+        }
+        console.log(`🎉 You successfully created a pool for "${erc721Address}".`)
+      // })
+    }
 
 async function depositBtn(){
   console.log("deposit pool")
@@ -149,7 +174,23 @@ const CreatorPool = () => {
 
   return (
     <div>
-      <p>Creator Pool</p>
+      <h1>Creator Pool</h1>
+      <form >
+  <div class="flex items-center border-b border-teal-500 py-2">
+    <input id='createPool' class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="0x" aria-label="ERC721 Address"/>
+    <button 
+    onClick={async () => {await createPool();} }
+    class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+      Create Pool
+    </button>
+    <button class="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
+      Cancel
+    </button>
+  </div>
+</form>
+
+
+      
       <button
         type="button"
         id="approveCreatorPoolBtn"
