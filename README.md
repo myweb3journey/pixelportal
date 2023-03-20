@@ -7,6 +7,32 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [ Prototype: ]( https://www.figma.com/proto/Ep44GttqBm3bVZJkAm968x/Outeredge-Hackathon?node-id=26-7799&scaling=scale-down-width&page-id=0%3A1 
 
+
+## BRANCHES
+deposittopool branch has implemented contracts 
+
+## What was implemented
+- Figma Wireframes of App
+
+- Buy NFT with a Credit Card and without a Wallet
+- Create pools, deposit and withdraw (Solidity + Half Baked Frontend on deposittopool branch - interacted on goerli but also deployed on mainnet) with the `PooledNFT.sol`
+- Marketplace with discount if you have a circular token. (Solidity + Half Baked Frontend on deposittopool branch - interacted on goerli)
+- RentToOwn SmartContract (transfer nft tokens to smart contract to be rented)
+- Livepeer SDK so that the creator can upload a video as an NFT 
+
+## Deployed Smart Contracts
+Smart contracts are on the `deposittopool`branch 
+Mainnet
+CreatePool.sol - Creates Pooled NFTs
+0x17ba9c4d21d9215bec87966b83b46d6ee9eb8c87
+
+Goerli
+CreatePool.sol - Creates Pooled NFTs
+0xcbb9ddd989abe357a9a19433bbe68fa011e538fb
+
+ERC721Pool (PooledNFT)
+0xbbdea5748561eee4330f744456b658e08f495ccb
+
 ## Deployed Smart Contracts
 Mainnet
 CreatePool.sol - Creates Pooled NFTs
