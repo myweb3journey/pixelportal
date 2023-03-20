@@ -83,6 +83,11 @@ const Navbar = () => {
                                 {navbarData.marketplace_btn_txt}
                         </button> */}
 
+                        {/* Btn: CreatorPool */}
+                        <button onClick={() => navigate("/creatorpool")} className="flex p-2 shadow-lg font-semibold text-xs text-black  bg-gray-100 border border-white focus:outline-none focus:bg-black focus:text-white duration-150 justify-center items-center">
+                                {navbarData.creatorpool_btn_txt}
+                        </button>
+
                         {/* Btn: Connect Wallet */}
                         <ConnectButton className="flex justify-center items-center text-xs"/>
 
