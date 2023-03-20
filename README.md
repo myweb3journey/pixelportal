@@ -3,11 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Prototype & Pitch Deck
-[ Pitch Deck: ] 
-https://www.canva.com/design/DAFdrGEPf2M/NUXg39HrN3yGLa2ZtlxQFA/view?utm_content=DAFdrGEPf2M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+[ Pitch Deck: ](https://www.canva.com/design/DAFdrGEPf2M/NUXg39HrN3yGLa2ZtlxQFA/view?utm_content=DAFdrGEPf2M&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-[ Prototype: ]
-( https://www.figma.com/proto/Ep44GttqBm3bVZJkAm968x/Outeredge-Hackathon?node-id=26-7799&scaling=scale-down-width&page-id=0%3A1 )
+[ Prototype: ]( https://www.figma.com/proto/Ep44GttqBm3bVZJkAm968x/Outeredge-Hackathon?node-id=26-7799&scaling=scale-down-width&page-id=0%3A1 
 
 ## Deployed Smart Contracts
 Mainnet
